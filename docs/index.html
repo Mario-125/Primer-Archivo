@@ -3,21 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi página personal">
     <title>Mi página web</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 32px 20px;
+            background-color: skyblue;
+            color: #17324d;
+            font-family: Arial, sans-serif;
+        }
+        h1 { margin: 0 0 24px; text-align: center; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            min-height: 190px;
+            padding: 24px;
+            background: #fff;
+            border: 2px solid #d5e8f5;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgb(23 50 77 / 12%);
+        }
+        .card h2 { margin-top: 0; }
+        .next-card { display: flex; flex-direction: column; align-items: flex-start; }
+        .button {
+            display: inline-block;
+            margin-top: auto;
+            padding: 11px 16px;
+            border-radius: 8px;
+            background: #1769aa;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .button:hover, .button:focus { background: #104c7d; }
+        @media (max-width: 500px) {
+            body { padding: 24px 16px; }
+            .card { min-height: 160px; }
+        }
+    </style>
 </head>
 <body>
-    <a href="pagina2.html">
-        <button type="button">Siguiente ➡️</button>
-    </a>
-
     <h1>¡Bienvenido a mi página!</h1>
-    <p>Esta es mi primera página web.</p>
-
-    <h2>Sobre mí</h2>
-    <p>Aquí puedes poner información sobre ti.</p>
-
-    <h2>Contacto</h2>
-    <p>Mi nombre: Mario</p>
+    <main class="grid">
+        <section class="card">
+            <h2>Quién soy</h2>
+            <p>Mi nombre es Mario. Aquí puedes contar más cosas sobre ti.</p>
+        </section>
+        <section class="card next-card">
+            <h2>Siguiente página</h2>
+            <p>Usa el botón para continuar.</p>
+            <a class="button" href="pagina2.html">Siguiente ➡️</a>
+        </section>
+        <section class="card" aria-label="Recuadro vacío 1"></section>
+        <section class="card" aria-label="Recuadro vacío 2"></section>
+        <section class="card" aria-label="Recuadro vacío 3"></section>
+    </main>
 </body>
 </html>
